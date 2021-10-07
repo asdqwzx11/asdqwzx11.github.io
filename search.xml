@@ -7,11 +7,11 @@
 
 <span id="more"></span>
 
-<h2 id="JavaScript与Java在语法方面的区别："><a href="#JavaScript与Java在语法方面的区别：" class="headerlink" title="JavaScript与Java在语法方面的区别："></a>JavaScript与Java在语法方面的区别：</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3>
+<h2 id="JavaScript与Java在语法方面的区别："><a href="#JavaScript与Java在语法方面的区别：" class="headerlink" title="JavaScript与Java在语法方面的区别："></a>JavaScript与Java在语法方面的区别：</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><img src="/2021/10/07/JavaScript%E8%A6%81%E7%82%B9/Image1.png" class>
 
 <h3 id="比较运算"><a href="#比较运算" class="headerlink" title="比较运算"></a>比较运算</h3><p>等于： == 等于是简单的做字面值的比较   </p>
 <p>全等于： === 除了做字面值的比较之外，还会比较两个变量的数据类型</p>
-<h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3>
+<h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><img src="/2021/10/07/JavaScript%E8%A6%81%E7%82%B9/Image2.png" class>
 
 <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>JS 中数组的定义：</p>
 <p>​    var 数组名= []; // 空数组</p>
@@ -35,30 +35,6 @@
 <p><strong>动态注册：</strong><br>ex: onclick事件绑定</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">window.onload = function () &#123;</span><br><span class="line"><span class="keyword">var</span> btnObj = document.getElementById(<span class="string">&quot;btn01&quot;</span>);</span><br><span class="line">btnObj.onclick = function () &#123;</span><br><span class="line">alert(<span class="string">&quot;动态注册的onclick 事件&quot;</span>);&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;button id=<span class="string">&quot;btn01&quot;</span>&gt;按钮<span class="number">2</span>&lt;/button&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 
-]]></content>
-  </entry>
-  <entry>
-    <title>表单重复提交和解决方式</title>
-    <url>/2021/09/28/%E8%A1%A8%E5%8D%95%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="一、表单重复提交"><a href="#一、表单重复提交" class="headerlink" title="一、表单重复提交"></a>一、表单重复提交</h2><p>三种常见情况：</p>
-<ol>
-<li><p>提交完表单，服务器采用请求转发来进行页面跳转，这个时候用户按下功能键F5，就会发起最后一次的请求，造成表单重复提交问题。解决方法：通过请求重定向来进行跳转。</p>
-<span id="more"></span></li>
-<li><p>用户正常提交服务器，但是由于网络延迟等原因，迟迟未收到服务器的响应，这个时候，用户以为提交失败，就会着急，然后多点了几次提交操作，也会造成表单重复提交。</p>
-</li>
-<li><p>用户正常提交服务器，服务器也没有延迟，但是提交完成后，用户回退浏览器，重新提交，也会造成表单重复提交。</p>
-</li>
-</ol>
-<p><strong>通用最佳解决方法：使用验证码。</strong></p>
-<h2 id="二、验证码使用"><a href="#二、验证码使用" class="headerlink" title="二、验证码使用"></a>二、验证码使用</h2><ol>
-<li>导入谷歌验证码jar包:kaptcha-{version}.jar</li>
-<li>在web.xml中去配置用于生成验证码的servlet程序 (servlet类在Jar包中，路径名改为JPG格式，便于理解调用)</li>
-<li>获取Session中的验证码</li>
-<li>删除Session中的验证码</li>
-<li>获取请求的参数</li>
-<li>检查验证码是否正确</li>
-<li>为验证码图片绑定单击事件，刷新验证码，同时为了避免浏览器缓存图片，在地址后➕一个时间戳（”?d=”+new Date()）</li>
-</ol>
 ]]></content>
   </entry>
   <entry>
@@ -91,6 +67,30 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>表单重复提交和解决方式</title>
+    <url>/2021/09/28/%E8%A1%A8%E5%8D%95%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="一、表单重复提交"><a href="#一、表单重复提交" class="headerlink" title="一、表单重复提交"></a>一、表单重复提交</h2><p>三种常见情况：</p>
+<ol>
+<li><p>提交完表单，服务器采用请求转发来进行页面跳转，这个时候用户按下功能键F5，就会发起最后一次的请求，造成表单重复提交问题。解决方法：通过请求重定向来进行跳转。</p>
+<span id="more"></span></li>
+<li><p>用户正常提交服务器，但是由于网络延迟等原因，迟迟未收到服务器的响应，这个时候，用户以为提交失败，就会着急，然后多点了几次提交操作，也会造成表单重复提交。</p>
+</li>
+<li><p>用户正常提交服务器，服务器也没有延迟，但是提交完成后，用户回退浏览器，重新提交，也会造成表单重复提交。</p>
+</li>
+</ol>
+<p><strong>通用最佳解决方法：使用验证码。</strong></p>
+<h2 id="二、验证码使用"><a href="#二、验证码使用" class="headerlink" title="二、验证码使用"></a>二、验证码使用</h2><ol>
+<li>导入谷歌验证码jar包:kaptcha-{version}.jar</li>
+<li>在web.xml中去配置用于生成验证码的servlet程序 (servlet类在Jar包中，路径名改为JPG格式，便于理解调用)</li>
+<li>获取Session中的验证码</li>
+<li>删除Session中的验证码</li>
+<li>获取请求的参数</li>
+<li>检查验证码是否正确</li>
+<li>为验证码图片绑定单击事件，刷新验证码，同时为了避免浏览器缓存图片，在地址后➕一个时间戳（”?d=”+new Date()）</li>
+</ol>
 ]]></content>
   </entry>
 </search>
