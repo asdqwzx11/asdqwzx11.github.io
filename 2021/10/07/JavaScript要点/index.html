@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32%EF%BF%BD%EF%BF%BD32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一. JavaScript的应用方式：1234&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;        alert(&quot;浏览器警示语!&quot;)&lt;&#x2F;script&gt;&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;1.js&quot;&gt;&lt;&#x2F;script&amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript要点">
+<meta property="og:url" content="http://example.com/2021/10/07/JavaScript%E8%A6%81%E7%82%B9/index.html">
+<meta property="og:site_name" content="YU_BLOG">
+<meta property="og:description" content="一. JavaScript的应用方式：1234&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;        alert(&quot;浏览器警示语!&quot;)&lt;&#x2F;script&gt;&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;1.js&quot;&gt;&lt;&#x2F;script&amp;g">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-10-07T15:20:25.000Z">
+<meta property="article:modified_time" content="2021-10-07T15:45:31.320Z">
+<meta property="article:author" content="Liu zhenyu">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/10/07/JavaScript%E8%A6%81%E7%82%B9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>JavaScript要点 | YU_BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">YU_BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/07/JavaScript%E8%A6%81%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.jpg">
+      <meta itemprop="name" content="Liu zhenyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YU_BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript要点
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-10-07 23:20:25 / 修改时间：23:45:31" itemprop="dateCreated datePublished" datetime="2021-10-07T23:20:25+08:00">2021-10-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="一-JavaScript的应用方式："><a href="#一-JavaScript的应用方式：" class="headerlink" title="一. JavaScript的应用方式："></a>一. JavaScript的应用方式：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">        alert(<span class="string">&quot;浏览器警示语!&quot;</span>)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;1.js&quot;</span>&gt;&lt;/script&gt;<span class="comment">//(标签引入单独的js文件)</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="二-JavaScript与Java在语法方面的区别："><a href="#二-JavaScript与Java在语法方面的区别：" class="headerlink" title="二. JavaScript与Java在语法方面的区别："></a>二. JavaScript与Java在语法方面的区别：</h2><h3 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1.数据类型"></a>1.数据类型</h3>
+
+<h3 id="2-比较运算"><a href="#2-比较运算" class="headerlink" title="2.比较运算"></a>2.比较运算</h3><p>等于： == 等于是简单的做字面值的比较   </p>
+<p>全等于： === 除了做字面值的比较之外，还会比较两个变量的数据类型</p>
+<h3 id="3-逻辑运算"><a href="#3-逻辑运算" class="headerlink" title="3.逻辑运算"></a>3.逻辑运算</h3>
+
+<h3 id="4-数组"><a href="#4-数组" class="headerlink" title="4.数组"></a>4.数组</h3><p>JS 中数组的定义：</p>
+<p>​    var 数组名= []; // 空数组</p>
+<p>​    var 数组名= [1 , ’abc’ , true]; // 定义数组同时赋值元素</p>
+<p>JavaScript 语言中的数组，只要我们通过数组下标赋值，那么如果超过最大的下标值，就会自动的给数组做扩容操作。</p>
+<h2 id="三-JavaScript中的函数和事件-重点-："><a href="#三-JavaScript中的函数和事件-重点-：" class="headerlink" title="三. JavaScript中的函数和事件(重点)："></a>三. JavaScript中的函数和事件(重点)：</h2><h3 id="1-函数"><a href="#1-函数" class="headerlink" title="1.函数"></a>1.函数</h3><h4 id="1-1-JavaScript中的函数定义方式："><a href="#1-1-JavaScript中的函数定义方式：" class="headerlink" title="1.1 JavaScript中的函数定义方式："></a>1.1 JavaScript中的函数定义方式：</h4><p>（1）function 函数名(形参列表){函数体}<br>ex:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">fun2</span><span class="params">(a ,b)</span></span>&#123;</span><br><span class="line">    alert(<span class="string">&quot;有参函数fun2()被调用了a=&gt;&quot;</span> + a + <span class="string">&quot;,b=&gt;&quot;</span>+b);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>（2）var 函数名= function(形参列表) { 函数体}<br>ex:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun2 = function (a,b)&#123;</span><br><span class="line">    alert(<span class="string">&quot;有参函数a=&quot;</span> + a + <span class="string">&quot;,b=&quot;</span> + b);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-在JavaScript-语言中，如何定义带有返回值的函数？"><a href="#1-2-在JavaScript-语言中，如何定义带有返回值的函数？" class="headerlink" title="1.2 在JavaScript 语言中，如何定义带有返回值的函数？"></a>1.2 在JavaScript 语言中，如何定义带有返回值的函数？</h4><p>​    只需要在函数体内直接使用return 语句返回值即可！</p>
+<p>ex:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun3 = function (num1,num2) &#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2;</span><br><span class="line">  &#125;</span><br><span class="line">    alert( fun3(<span class="number">100</span>,<span class="number">200</span>) );</span><br></pre></td></tr></table></figure>
+
+<p><strong>注：在Java 中函数允许重载。但是在JS 中函数的重载会直接覆盖掉上一次的定义。</strong></p>
+<h2 id="2-事件"><a href="#2-事件" class="headerlink" title="2.事件"></a>2.事件</h2><h4 id="2-1常用的事件："><a href="#2-1常用的事件：" class="headerlink" title="2.1常用的事件："></a>2.1常用的事件：</h4><p>​    onload 加载完成事件： 页面加载完成之后，常用于做页面js 代码初始化操作<br>​    onclick 单击事件： 常用于按钮的点击响应操作。<br>​    onblur 失去焦点事件： 常用用于输入框失去焦点后验证其输入内容是否合法。<br>​    onchange 内容发生改变事件： 常用于下拉列表和输入框内容发生改变后操作<br>​    onsubmit 表单提交事件： 常用于表单提交前，验证所有表单项是否合法。</p>
+<h4 id="2-2事件的注册-绑定-："><a href="#2-2事件的注册-绑定-：" class="headerlink" title="2.2事件的注册(绑定)："></a>2.2事件的注册(绑定)：</h4><p><strong>静态注册：</strong><br>ex: onclick事件绑定</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line"><span class="function">function <span class="title">onclickFun</span><span class="params">()</span> </span>&#123;</span><br><span class="line">alert(<span class="string">&quot;静态注册onclick 事件&quot;</span>);</span><br><span class="line">&#125;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;!--静态注册onClick 事件--&gt;</span><br><span class="line">&lt;button onclick=<span class="string">&quot;onclickFun();&quot;</span>&gt;按钮<span class="number">1</span>&lt;/button&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>动态注册：</strong><br>ex: onclick事件绑定</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">window.onload = function () &#123;</span><br><span class="line"><span class="keyword">var</span> btnObj = document.getElementById(<span class="string">&quot;btn01&quot;</span>);</span><br><span class="line">btnObj.onclick = function () &#123;</span><br><span class="line">alert(<span class="string">&quot;动态注册的onclick 事件&quot;</span>);&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;button id=<span class="string">&quot;btn01&quot;</span>&gt;按钮<span class="number">2</span>&lt;/button&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/28/%E8%A1%A8%E5%8D%95%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F/" rel="prev" title="表单重复提交和解决方式">
+      <i class="fa fa-chevron-left"></i> 表单重复提交和解决方式
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-JavaScript%E7%9A%84%E5%BA%94%E7%94%A8%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">一. JavaScript的应用方式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C-JavaScript%E4%B8%8EJava%E5%9C%A8%E8%AF%AD%E6%B3%95%E6%96%B9%E9%9D%A2%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">二. JavaScript与Java在语法方面的区别：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">1.数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97"><span class="nav-number">2.2.</span> <span class="nav-text">2.比较运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><span class="nav-number">2.3.</span> <span class="nav-text">3.逻辑运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%95%B0%E7%BB%84"><span class="nav-number">2.4.</span> <span class="nav-text">4.数组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89-JavaScript%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E4%BA%8B%E4%BB%B6-%E9%87%8D%E7%82%B9-%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">三. JavaScript中的函数和事件(重点)：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.</span> <span class="nav-text">1.函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-JavaScript%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="nav-number">3.1.1.</span> <span class="nav-text">1.1 JavaScript中的函数定义方式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-%E5%9C%A8JavaScript-%E8%AF%AD%E8%A8%80%E4%B8%AD%EF%BC%8C%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89%E5%B8%A6%E6%9C%89%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E5%87%BD%E6%95%B0%EF%BC%9F"><span class="nav-number">3.1.2.</span> <span class="nav-text">1.2 在JavaScript 语言中，如何定义带有返回值的函数？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BA%8B%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">2.事件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1%E5%B8%B8%E7%94%A8%E7%9A%84%E4%BA%8B%E4%BB%B6%EF%BC%9A"><span class="nav-number">4.0.1.</span> <span class="nav-text">2.1常用的事件：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%B3%A8%E5%86%8C-%E7%BB%91%E5%AE%9A-%EF%BC%9A"><span class="nav-number">4.0.2.</span> <span class="nav-text">2.2事件的注册(绑定)：</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div id="music163player">
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1878225963&auto=1&height=66">
+	</iframe>
+      </div>
+
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Liu zhenyu"
+      src="/images/header.jpg">
+  <p class="site-author-name" itemprop="name">Liu zhenyu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liu zhenyu</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
