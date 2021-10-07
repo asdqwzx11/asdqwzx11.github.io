@@ -3,33 +3,33 @@
   <entry>
     <title>JavaScript要点</title>
     <url>/2021/10/07/JavaScript%E8%A6%81%E7%82%B9/</url>
-    <content><![CDATA[<h2 id="一-JavaScript的应用方式："><a href="#一-JavaScript的应用方式：" class="headerlink" title="一. JavaScript的应用方式："></a>一. JavaScript的应用方式：</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">        alert(<span class="string">&quot;浏览器警示语!&quot;</span>)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;1.js&quot;</span>&gt;&lt;/script&gt;<span class="comment">//(标签引入单独的js文件)</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h2 id="JavaScript的应用方式："><a href="#JavaScript的应用方式：" class="headerlink" title="JavaScript的应用方式："></a>JavaScript的应用方式：</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">        alert(<span class="string">&quot;浏览器警示语!&quot;</span>)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;1.js&quot;</span>&gt;&lt;/script&gt;<span class="comment">//(标签引入单独的js文件)</span></span><br></pre></td></tr></table></figure>
 
 <span id="more"></span>
 
-<h2 id="二-JavaScript与Java在语法方面的区别："><a href="#二-JavaScript与Java在语法方面的区别：" class="headerlink" title="二. JavaScript与Java在语法方面的区别："></a>二. JavaScript与Java在语法方面的区别：</h2><h3 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1.数据类型"></a>1.数据类型</h3>
+<h2 id="JavaScript与Java在语法方面的区别："><a href="#JavaScript与Java在语法方面的区别：" class="headerlink" title="JavaScript与Java在语法方面的区别："></a>JavaScript与Java在语法方面的区别：</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3>
 
-<h3 id="2-比较运算"><a href="#2-比较运算" class="headerlink" title="2.比较运算"></a>2.比较运算</h3><p>等于： == 等于是简单的做字面值的比较   </p>
+<h3 id="比较运算"><a href="#比较运算" class="headerlink" title="比较运算"></a>比较运算</h3><p>等于： == 等于是简单的做字面值的比较   </p>
 <p>全等于： === 除了做字面值的比较之外，还会比较两个变量的数据类型</p>
-<h3 id="3-逻辑运算"><a href="#3-逻辑运算" class="headerlink" title="3.逻辑运算"></a>3.逻辑运算</h3>
+<h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3>
 
-<h3 id="4-数组"><a href="#4-数组" class="headerlink" title="4.数组"></a>4.数组</h3><p>JS 中数组的定义：</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>JS 中数组的定义：</p>
 <p>​    var 数组名= []; // 空数组</p>
 <p>​    var 数组名= [1 , ’abc’ , true]; // 定义数组同时赋值元素</p>
 <p>JavaScript 语言中的数组，只要我们通过数组下标赋值，那么如果超过最大的下标值，就会自动的给数组做扩容操作。</p>
-<h2 id="三-JavaScript中的函数和事件-重点-："><a href="#三-JavaScript中的函数和事件-重点-：" class="headerlink" title="三. JavaScript中的函数和事件(重点)："></a>三. JavaScript中的函数和事件(重点)：</h2><h3 id="1-函数"><a href="#1-函数" class="headerlink" title="1.函数"></a>1.函数</h3><h4 id="1-1-JavaScript中的函数定义方式："><a href="#1-1-JavaScript中的函数定义方式：" class="headerlink" title="1.1 JavaScript中的函数定义方式："></a>1.1 JavaScript中的函数定义方式：</h4><p>（1）function 函数名(形参列表){函数体}<br>ex:</p>
+<h2 id="JavaScript中的函数和事件-重点-："><a href="#JavaScript中的函数和事件-重点-：" class="headerlink" title="JavaScript中的函数和事件(重点)："></a>JavaScript中的函数和事件(重点)：</h2><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="JavaScript中的函数定义方式："><a href="#JavaScript中的函数定义方式：" class="headerlink" title="JavaScript中的函数定义方式："></a>JavaScript中的函数定义方式：</h4><p>（1）function 函数名(形参列表){函数体}<br>ex:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">function <span class="title">fun2</span><span class="params">(a ,b)</span></span>&#123;</span><br><span class="line">    alert(<span class="string">&quot;有参函数fun2()被调用了a=&gt;&quot;</span> + a + <span class="string">&quot;,b=&gt;&quot;</span>+b);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
 <p>（2）var 函数名= function(形参列表) { 函数体}<br>ex:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fun2 = function (a,b)&#123;</span><br><span class="line">    alert(<span class="string">&quot;有参函数a=&quot;</span> + a + <span class="string">&quot;,b=&quot;</span> + b);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="1-2-在JavaScript-语言中，如何定义带有返回值的函数？"><a href="#1-2-在JavaScript-语言中，如何定义带有返回值的函数？" class="headerlink" title="1.2 在JavaScript 语言中，如何定义带有返回值的函数？"></a>1.2 在JavaScript 语言中，如何定义带有返回值的函数？</h4><p>​    只需要在函数体内直接使用return 语句返回值即可！</p>
+<h4 id="在JavaScript-语言中，如何定义带有返回值的函数？"><a href="#在JavaScript-语言中，如何定义带有返回值的函数？" class="headerlink" title="在JavaScript 语言中，如何定义带有返回值的函数？"></a>在JavaScript 语言中，如何定义带有返回值的函数？</h4><p>​    只需要在函数体内直接使用return 语句返回值即可！</p>
 <p>ex:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fun3 = function (num1,num2) &#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2;</span><br><span class="line">  &#125;</span><br><span class="line">    alert( fun3(<span class="number">100</span>,<span class="number">200</span>) );</span><br></pre></td></tr></table></figure>
 
 <p><strong>注：在Java 中函数允许重载。但是在JS 中函数的重载会直接覆盖掉上一次的定义。</strong></p>
-<h2 id="2-事件"><a href="#2-事件" class="headerlink" title="2.事件"></a>2.事件</h2><h4 id="2-1常用的事件："><a href="#2-1常用的事件：" class="headerlink" title="2.1常用的事件："></a>2.1常用的事件：</h4><p>​    onload 加载完成事件： 页面加载完成之后，常用于做页面js 代码初始化操作<br>​    onclick 单击事件： 常用于按钮的点击响应操作。<br>​    onblur 失去焦点事件： 常用用于输入框失去焦点后验证其输入内容是否合法。<br>​    onchange 内容发生改变事件： 常用于下拉列表和输入框内容发生改变后操作<br>​    onsubmit 表单提交事件： 常用于表单提交前，验证所有表单项是否合法。</p>
-<h4 id="2-2事件的注册-绑定-："><a href="#2-2事件的注册-绑定-：" class="headerlink" title="2.2事件的注册(绑定)："></a>2.2事件的注册(绑定)：</h4><p><strong>静态注册：</strong><br>ex: onclick事件绑定</p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><h4 id="常用的事件："><a href="#常用的事件：" class="headerlink" title="常用的事件："></a>常用的事件：</h4><p>​    onload 加载完成事件： 页面加载完成之后，常用于做页面js 代码初始化操作<br>​    onclick 单击事件： 常用于按钮的点击响应操作。<br>​    onblur 失去焦点事件： 常用用于输入框失去焦点后验证其输入内容是否合法。<br>​    onchange 内容发生改变事件： 常用于下拉列表和输入框内容发生改变后操作<br>​    onsubmit 表单提交事件： 常用于表单提交前，验证所有表单项是否合法。</p>
+<h4 id="事件的注册-绑定-："><a href="#事件的注册-绑定-：" class="headerlink" title="事件的注册(绑定)："></a>事件的注册(绑定)：</h4><p><strong>静态注册：</strong><br>ex: onclick事件绑定</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line"><span class="function">function <span class="title">onclickFun</span><span class="params">()</span> </span>&#123;</span><br><span class="line">alert(<span class="string">&quot;静态注册onclick 事件&quot;</span>);</span><br><span class="line">&#125;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;!--静态注册onClick 事件--&gt;</span><br><span class="line">&lt;button onclick=<span class="string">&quot;onclickFun();&quot;</span>&gt;按钮<span class="number">1</span>&lt;/button&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 
 <p><strong>动态注册：</strong><br>ex: onclick事件绑定</p>
@@ -49,6 +49,24 @@
 
 <img src="/2021/09/26/eclipse-keys/Image2.png" class>
 
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/09/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -73,24 +91,6 @@
 <li>检查验证码是否正确</li>
 <li>为验证码图片绑定单击事件，刷新验证码，同时为了避免浏览器缓存图片，在地址后➕一个时间戳（”?d=”+new Date()）</li>
 </ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/09/25/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
 </search>
